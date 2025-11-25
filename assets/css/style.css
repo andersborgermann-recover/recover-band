@@ -954,6 +954,61 @@ img {
     border-color: var(--color-primary);
 }
 
+/* Audio Player */
+.audio-player {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.audio-player:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-primary);
+}
+
+.audio-player audio {
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    outline: none;
+}
+
+.audio-player audio::-webkit-media-controls-panel {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.audio-player audio::-webkit-media-controls-play-button,
+.audio-player audio::-webkit-media-controls-current-time-display,
+.audio-player audio::-webkit-media-controls-time-remaining-display {
+    color: white;
+}
+
+/* SoundCloud Embed */
+.soundcloud-embed {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.soundcloud-embed:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-primary);
+}
+
+.soundcloud-embed iframe {
+    border-radius: 8px;
+}
+
+
 .audio-icon {
     width: 40px;
     height: 40px;
