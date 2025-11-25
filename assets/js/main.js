@@ -75,8 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
         function renderSongs(songs) {
             songListContainer.innerHTML = '';
 
+            // Add Header
+            const header = document.createElement('div');
+            header.className = 'song-list-header';
+            header.innerHTML = `
+                <div class="header-title">Titel</div>
+                <div class="header-artist">Kunstner</div>
+                <div class="header-tag">Genre</div>
+            `;
+            songListContainer.appendChild(header);
+
             if (songs.length === 0) {
-                songListContainer.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--color-text-muted);">Ingen sange fundet.</p>';
+                songListContainer.innerHTML += '<p style="text-align:center; padding: 2rem; color: var(--color-text-muted);">Ingen sange fundet.</p>';
                 return;
             }
 
