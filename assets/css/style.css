@@ -199,6 +199,24 @@ img {
     color: var(--color-text) !important;
 }
 
+.phone-link {
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.phone-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.phone-link:hover {
+    color: var(--color-secondary);
+}
+
 .theme-toggle {
     background: transparent;
     border: none;
