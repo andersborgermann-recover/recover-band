@@ -28,6 +28,28 @@
                 <li><a href="#about">Om Os</a></li>
                 <li><a href="#media">Media</a></li>
                 <li><a href="#repertoire">Repertoire</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Skift tema">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
                 <li><a href="#contact" class="btn-nav">Book Nu</a></li>
             </ul>
         </div>
@@ -37,7 +59,7 @@
         <div class="ambient-shape shape-1"></div>
         <div class="ambient-shape shape-2"></div>
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
+        <div class="hero-content">
             <div class="logo-container">
                 <img src="assets/images/logo.png" alt="Recover Band Logo" class="hero-logo">
             </div>
@@ -47,14 +69,6 @@
                 <a href="#contact" class="btn btn-primary">Book Bandet</a>
                 <a href="#repertoire" class="btn btn-secondary">Se Sætliste</a>
             </div>
-        </div>
-        <div class="wave-divider wave-bottom">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                    class="shape-fill"></path>
-            </svg>
         </div>
     </header>
 
@@ -78,14 +92,6 @@
                     <p>Vi tilpasser sætlisten til netop dit arrangement og dine gæster.</p>
                 </div>
             </div>
-        </div>
-        <div class="wave-divider wave-bottom-alt">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                    class="shape-fill"></path>
-            </svg>
         </div>
     </section>
 
@@ -116,6 +122,34 @@
                     <div class="stat-card">
                         <span class="stat-number">4</span>
                         <span class="stat-label">Medlemmer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">Billeder fra Tidligere Events</h2>
+            <p class="section-desc">Se os i aktion til forskellige arrangementer.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/band_performance.png" alt="Recover band live performance">
+                    <div class="gallery-overlay">
+                        <p>Live Performance</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/wedding_event.png" alt="Bryllup med Recover">
+                    <div class="gallery-overlay">
+                        <p>Bryllup</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/corporate_event.png" alt="Firmafest med Recover">
+                    <div class="gallery-overlay">
+                        <p>Firmafest</p>
                     </div>
                 </div>
             </div>

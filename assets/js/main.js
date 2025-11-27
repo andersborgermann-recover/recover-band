@@ -17,16 +17,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Navbar scroll effect
+    // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
+    
+    function updateNavbar() {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(5, 10, 24, 0.95)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(5, 10, 24, 0.8)';
-            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('scrolled');
         }
-    });
+    }
+    
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar(); // Initial check
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (storedTheme === 'light' || (!storedTheme && !prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
 
     // Mobile Menu Toggle
     const mobileBtn = document.querySelector('.mobile-menu-btn');
