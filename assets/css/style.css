@@ -37,6 +37,8 @@
     --shadow-color: rgba(0, 0, 0, 0.3);
     --input-focus-bg: rgba(255, 255, 255, 0.1);
     --nav-bg-scrolled: rgba(5, 10, 24, 0.95);
+    --floating-artist-color: rgba(255, 255, 255, 0.15);
+    --floating-artist-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
 }
 
 [data-theme="light"] {
@@ -58,6 +60,8 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
     --input-focus-bg: #ffffff;
     --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
+    --floating-artist-color: rgba(0, 0, 0, 0.06);
+    --floating-artist-shadow: none;
 }
 
 * {
@@ -1253,4 +1257,75 @@ img {
     color: var(--color-text-muted);
     font-size: 0.8rem;
     font-style: italic;
+}
+
+/* Floating Artists in Hero */
+.hero-floating-artists {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-artist {
+    position: absolute;
+    color: var(--floating-artist-color);
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    left: var(--x);
+    top: var(--y);
+    animation: float-cloud 15s infinite ease-in-out alternate;
+    animation-delay: calc(var(--i) * -2s);
+    opacity: 0;
+    filter: blur(0.5px);
+    user-select: none;
+    text-shadow: var(--floating-artist-shadow);
+}
+
+@keyframes float-cloud {
+    0% {
+        transform: translate(0, 0) scale(0.9) rotate(-5deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+        /* Quick fade in */
+    }
+
+    20% {
+        opacity: 1;
+        /* Full visibility */
+        filter: blur(0px);
+    }
+
+    50% {
+        transform: translate(20px, -20px) scale(1.1) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-20px, 20px) scale(0.9) rotate(5deg);
+        opacity: 0;
+    }
 }

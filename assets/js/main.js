@@ -163,4 +163,31 @@ document.addEventListener('DOMContentLoaded', () => {
             renderSongs(filtered);
         }
     }
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const type = document.getElementById('type').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+
+            const subject = `Booking forespørgsel: ${type} - ${date}`;
+            const body = `Navn: ${name}
+Email: ${email}
+Type af fest: ${type}
+Dato: ${date}
+
+Besked:
+${message}`;
+
+            const mailtoLink = `mailto:andersborgermann@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoLink;
+        });
+    }
 });
